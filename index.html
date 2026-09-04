@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teacher's Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            /* A nice, warm gradient background */
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #d35400;
+            font-size: 3.5em;
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+        h3 {
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        .button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        button.subject-btn {
+            background: #ff7e5f;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+        }
+        button.subject-btn:hover {
+            transform: translateY(-3px);
+            background: #feb47b;
+            box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
+        }
+        
+        /* Styles for the message page */
+        .hidden {
+            display: none !important;
+        }
+        #message-page {
+            animation: fadeIn 0.6s ease;
+            text-align: left;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .back-btn {
+            background: #7f8c8d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: background 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+        .back-btn:hover {
+            background: #34495e;
+        }
+        .teacher-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .message-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            white-space: pre-wrap; /* Keeps your paragraph breaks */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="home-page">
+            <h1>🎓💡 Happy Teacher's Day 📚✨</h1>
+            <h3>Choose the subject you teach in Class 12</h3>
+            
+            <div class="button-grid">
+                <button class="subject-btn" onclick="openMessage('phy')">Physics</button>
+                <button class="subject-btn" onclick="openMessage('chem')">Chemistry</button>
+                <button class="subject-btn" onclick="openMessage('bio')">Biology</button>
+                <button class="subject-btn" onclick="openMessage('maths')">Mathematics</button>
+                <button class="subject-btn" onclick="openMessage('eng')">English</button>
+                <button class="subject-btn" onclick="openMessage('bengali')">Bengali</button>
+                <button class="subject-btn" onclick="openMessage('moral')">Moral Science</button>
+                <button class="subject-btn" onclick="openMessage('catechism')">Catechism</button>
+            </div>
+        </div>
+
+        <div id="message-page" class="hidden">
+            <button class="back-btn" onclick="goBack()">← Back to Menu</button>
+            <img id="teacher-img" class="teacher-img" src="" alt="Teacher Image">
+            <div id="teacher-message" class="message-content"></div>
+        </div>
+
+    </div>
+
+    <script>
+        // Data for all your teachers
+        const teacherData = {
+            phy: {
+                image: "c:\Users\cchri\OneDrive\Desktop\school tdwb\WhatsApp Image 2026-09-04 at 22.55.21.jpeg",
+                message: `Dear Dolly Ma'am,
+Happy Teacher's Day! As we navigate the crucial final stretch of Class 12, I wanted to take a moment to express just how grateful I am to have you as my Physics teacher. The ISC syllabus can be incredibly daunting, and whether we are grappling with complex theories or just trying to get the readings right on a Meter Bridge project, having an excellent teacher and mentor like you makes all the difference. You don't just teach us the formulas; you make sure we actually understand the concepts behind them.
+
+What I truly admire most about you, though, is your personality. In a world where people often sugarcoat things, your absolute frankness is a breath of fresh air. Your legendary roasts in class never fail to make us laugh and always succeed in keeping us completely grounded! We know that you can get a little angry sometimes, but we also realize it is only because you genuinely care about our futures and want us to reach our full potential. Beneath that strict and fiery exterior, you are incredibly sweet and fiercely supportive, always looking out for us when it matters most.
+
+Beyond being a phenomenal educator, you have been a true guide in life. The advice and support you share with us go far beyond the four walls of the physics lab. You are preparing us not just for our board exams, but for the real world ahead. Thank you, Dolly Ma'am, for your patience, your unwavering support, your brilliant sense of humor, and yes, even your scoldings. I am so incredibly lucky to be your student.`
+            },
+            chem: {
+                image: "c:\Users\cchri\OneDrive\Desktop\school tdwb\WhatsApp Image 2026-09-04 at 22.54.46.jpeg",
+                message: `Dear Hamida Ma'am,
+Happy Teacher's Day! As we tackle the heavy Class 12 Chemistry syllabus this year, I wanted to take a moment to thank you for all your hard work. It takes a lot of patience and dedication to guide us through such a demanding subject, and I truly appreciate how you always make sure that we are actually learning and retaining the material.
+
+A great teacher doesn't just read from a textbook; they put in the consistent effort to ensure their students are truly prepared for their exams. Your determination to see us succeed and your focus on making sure the concepts stick with us do not go unnoticed. Thank you for your guidance, your persistence, and for constantly pushing us to be ready for our board exams. Wishing you a wonderful Teacher's Day!`
+            },
+            bio: {
+                image: "c:\Users\cchri\OneDrive\Desktop\school tdwb\WhatsApp Image 2026-09-04 at 22.53.41.jpeg",
+                message: `Dear Roona Ma'am,
+Happy Teacher's Day! As we navigate our final year in Class 12, I wanted to take a moment to write to you and express my deepest gratitude for everything you do. The Biology syllabus can be incredibly dense and demanding, but having you as our teacher makes the entire journey feel so much more manageable and genuinely enjoyable.
+
+You are, without a doubt, one of the most caring and lovely people I have ever had the privilege of learning from. What truly sets you apart is how deeply you look out for your students. You are always there to help us with every single small thing, no matter how trivial our questions might seem. Whether we are struggling to understand a complex concept or just feeling overwhelmed by the pressure of our upcoming boards, your warm, supportive, and nurturing presence always puts us at ease.
+
+Beyond your wonderful personality, your teaching skills are absolutely awesome. You have this unique ability to bring the subject to life. In our theory classes, you break down the most complicated topics so that we actually understand them rather than just blindly memorizing them. And in the lab, your guidance during practicals is unmatched. You ensure that every experiment, dissection, and slide preparation makes perfect sense, turning what could be stressful practical sessions into classes we actually look forward to.
+
+Thank you, Roona Ma'am, for all the love, patience, and dedication you pour into teaching us every single day. We are so incredibly lucky to have you guiding us through this crucial year. Wishing you a very Happy Teacher's Day!`
+            },
+            maths: {
+                image: "c:\Users\cchri\OneDrive\Desktop\school tdwb\WhatsApp Image 2026-09-04 at 22.56.11.jpeg",
+                message: `Dear Anindita Ma'am,
+Happy Teacher's Day! As we tackle the endless formulas and complex problems of Class 12 Mathematics, I wanted to take a special moment to tell you that you are, without a doubt, my favorite teacher. Maths can be such an intimidating subject, but your teaching skills are just awesome, and you are so genuinely good at making sure we grasp the logic behind every step.
+
+What I truly appreciate most about you is your personality. You are completely frank with us, never hesitating to tell us exactly where we went wrong or how we need to improve. I know you can get a little angry with us sometimes when we make silly calculation errors or lose our focus, but we all realize that your strictness comes from a place of deep care. You push us because you genuinely want to see us succeed and conquer our board exams. Beneath that tough exterior, you are incredibly caring, constantly looking out for our best interests and supporting us through all the academic pressure.
+
+Thank you for your endless dedication, your straightforward advice, and for making such a challenging subject something I actually look forward to learning. You are an exceptional mentor, and I am so grateful to have you guiding me this year.`
+            },
+            eng: {
+                image: "c:\Users\cchri\OneDrive\Desktop\school tdwb\WhatsApp Image 2026-09-04 at 22.59.43.jpeg",
+                message: `Dear Sharmila Ma'am,
+Happy Teacher's Day! As we navigate through the heavy reading and writing of Class 12, I wanted to take a moment to tell you just how awesome you are as an English teacher. Your classes are always such a bright spot in my day. I truly appreciate how genuinely caring you are, and I love that you always take the time to joke around and kid with me a little. It creates such a warm and fun environment in the classroom, which takes so much of the stress out of our board exam preparations.
+
+Beyond your wonderful personality, your teaching is absolutely top-notch. The ISC English syllabus is packed with complex themes, but your notes are honestly worth their weight in gold! Whether we are trying to unpack the deep emotions of The Paper Menagerie, analyzing the sharp satire in The Great Automatic Grammatizator, or exploring the rich drama of Mukut, your insights make everything click perfectly. You give us the exact tools we need to truly understand and appreciate the literature, rather than just memorize it.
+
+Thank you for your fantastic sense of humor, your unending support, and for making English such a joy to learn. You are truly an amazing teacher, and I am so grateful to be in your class.`
+            },
+            bengali: {
+                image: "https://images.unsplash.com/photo-1585065406730-8919a79be3bd?auto=format&fit=crop&w=800&q=80",
+                message: `Dear Agnes Ma'am,
+Happy Teacher's Day! As we prepare for our final board exams, I wanted to take a moment to thank you for your guidance in Bengali this year. You have always been so genuinely nice to me, and your kind approach makes your classroom a very welcoming and comfortable place to learn.
+
+The ISC Bengali syllabus is quite vast, but your notes are honestly worth so much. They are incredibly well-structured and make revising the stories and poems so much easier. Diving into our syllabus texts feels much more approachable because of the clear and detailed materials you provide us. Your notes give us exactly what we need to write strong answers and feel confident heading into the exams.
+
+Thank you for being such a good teacher, for your warm personality, and for all the time you put into creating such valuable resources for our class. Wishing you a very happy and wonderful Teacher's Day!`
+            },
+            moral: {
+                image: "c:\Users\cchri\OneDrive\Desktop\school tdwb\WhatsApp Image 2026-09-04 at 22.56.48.jpeg",
+                message: `Dear Sister Lavina,
+Happy Teacher's Day! I wanted to take this special occasion to express my deep respect and gratitude to you, both as our Principal and as a guiding light for our school.
+
+Even though I am a Catechism student and do not attend your regular Moral Science classes, your teachings still have a profound impact on me. I always listen closely to the lessons and moral values you share with us during the morning assembly. The wisdom you impart is so incredibly relevant and provides exactly the kind of strong moral foundation we all need to navigate today's fast-paced world.
+
+Thank you for your wonderful leadership and for consistently instilling such good, meaningful values in all of us before we even step into our classrooms. Your words truly resonate and set the perfect tone for our day. Wishing you a very Happy Teacher's Day!`
+            },
+            catechism: {
+                image: "c:\Users\cchri\OneDrive\Desktop\school tdwb\WhatsApp Image 2026-09-04 at 22.59.54.jpeg",
+                message: `Dear Victor Sir,
+Happy Teacher's Day! I wanted to take a moment to express my sincere gratitude for your guidance in our Catechism classes this year. You are a truly wonderful teacher, and I deeply appreciate that your lessons go far beyond just completing the textbook syllabus.
+
+You take the time to genuinely teach us how to draw closer to Jesus and how to reflect His works in our everyday lives. Your spiritual guidance is incredibly meaningful and gives us a strong foundation of faith to rely on. And, of course, no class with you would feel complete without your iconic line: "Did you do your confession?" It always makes us smile, but it also serves as a perfect reminder to stay on the right path.
+
+Thank you for your dedication, your unwavering faith, and for being such an inspiring mentor to all of us. Wishing you a very blessed and Happy Teacher's Day!`
+            }
+        };
+
+        function openMessage(subject) {
+            // Hide home page, show message page
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('message-page').classList.remove('hidden');
+
+            // Populate data
+            document.getElementById('teacher-img').src = teacherData[subject].image;
+            document.getElementById('teacher-message').innerText = teacherData[subject].message;
+
+            // Trigger Party Popper (Confetti) Effect
+            var duration = 3000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#ff7e5f', '#feb47b', '#f6d365', '#fda085']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#ff7e5f', '#feb47b', '#f6d365', '#fda085']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        function goBack() {
+            // Hide message page, show home page
+            document.getElementById('message-page').classList.add('hidden');
+            document.getElementById('home-page').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
